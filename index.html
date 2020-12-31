@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="icon" href="assets/LogoDapurWeb2.png" size="32x32">
+    <!--LIFF API Script-->
+    <script src="liff-starter.js"></script>
+    <title>DapurMbokNdeso</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logoFrame">
+                <img id="logo" src="assets/LogoDapurWeb2.png" alt="logo">
+                <h1 id="title">DapurMbok<br><span class="title2">Ndeso</span></h1>
+            </div>
+        </nav>
+    </header>
+
+    <!--Main Content-->
+    <div id="liffIdErrorMessage" class="hidden">
+        <h2>Anda Membuka Aplikasi Melalui External Link.</h2>
+        <br>
+        <h2>Silahkan Login LINE Untuk Melanjutkan.</h2>
+        <div class="buttonGroup">
+            <button id="liffLoginButton">Log in</button>
+        </div>
+        <img src="assets/con2.png" alt="cony">
+    </div>
+   
+    <main id="liffAppContent">
+        <!--Informasi Profil LINE-->
+        <section class="dataLine">
+            <h3>Data Profil LINE Anda</h3>
+            <table id="tabelData">
+                <tr class="namaProfil">
+                    <th>Nama : </th>
+                    <td id="dispProfile"></td>
+                </tr>
+                <tr class="gambar">
+                    <th>Image :</th>
+                    <td id="dispImage"></td>
+                </tr>
+                <tr class="commandButton">
+                    <th><button id="liffLogoutButton">Log Out</button></th>
+                    <th><button id="openWindowButton">Open in External</button></th>
+                </tr>
+            </table>
+            <img id="cony1" src="assets/cony1.png" alt="cony1">
+        </section>
+
+        <!--About & Order-->
+        <article class="welcome">
+            <h3>Halo <span id="dispProfile2"></span></h3>
+            <p class="para1">Selamat datang di aplikasi pemesanan <b>DapurMbokNdeso.</b>
+            Berikut adalah daftar menu makanan yang tersedia, jika ingin memesan langsung saja tekan tombol "+" pesanan akan masuk ke Ringkasan. Jika sudah memilih makanan berikutnya tinggal menekan tombol "Order" maka order anda akan dibuat dan segera diproses. <br>Selamat Makan ^_^</p>
+        </article>
+
+        <article id="menu">
+            <h3>Daftar Menu</h3>
+            <div class="menu1">
+                <p class="namaMkn mkn1" value="Ayam Goreng">Ayam Goreng</p>
+                <img src="assets/AyamGoreng.jpg" alt="ayamgoreng">
+                <p class="deskripsi">2pcs Ayam goreng + Nasi + Lalapan + Sambel</p>
+                <p class="harga harga1" value="25000">25.000</p>
+                <div class="tambah">
+                    <p class="action">Tambah</p>
+                    <button class="btn btnSub sub1" value="-">-</button>
+                    <input type="text" value="0" class="counters count1" maxlength="3">
+                    <button class="btn btnAdd add1" value="+">+</button>
+                </div>
+            </div>
+            <div class="menu2">
+                <p class="namaMkn mkn2" value="Mangut Tempe">Mangut Tempe</p>
+                <img src="assets/Mangut.jpg" alt="mangut">
+                <p class="deskripsi">Mangut Tempe + Nasi</p>
+                <p class="harga harga2" value="40000">40.000</p>
+                <div class="tambah">
+                    <p class="action">Tambah</p>
+                    <button class="btn btnSub sub2" value="-">-</button>
+                    <input type="text" value="0" class="counters count2" maxlength="3">
+                    <button class="btn btnAdd add2" value="+">+</button>
+                </div>
+            </div>
+            <div class="menu3">
+                <p class="namaMkn mkn3" value="Sambal Ikan Mangut">Sambal Ikan Mangut</p>
+                <img src="assets/sambal.jpg" alt="sambal">
+                <p class="deskripsi">1pcs Ikan Mangut dengan Sambal + Nasi + Lalapan</p>
+                <p class="harga harga3" value="35000">35.000</p>
+                <div class="tambah">
+                    <p class="action">Tambah</p>
+                    <button class="btn btnSub sub3">-</button>
+                    <input type="text" value="0" class="counters count3" maxlength="3">
+                    <button class="btn btnAdd add3">+</button>
+                </div>
+            </div>
+            <div class="menu4">
+                <p class="namaMkn mkn4" value="Ayam Bakar Bumbu Rujak">Ayam Bakar</p>
+                <img src="assets/ayambakar.jpg" alt="ayambakar">
+                <p class="deskripsi">2pcs Ayam Bakar + Nasi + Sambal + Lalapan</p>
+                <p class="harga harga4" value="25000">25.000</p>
+                <div class="tambah">
+                    <p class="action">Tambah</p>
+                    <button class="btn btnSub sub4">-</button>
+                    <input type="text" value="0" class="counters count4" maxlength="3">
+                    <button class="btn btnAdd add4">+</button>
+                </div>
+            </div>
+
+            <!--Order-->
+            <div id="order">
+                <p id="ringkasan">
+                    Ringkasan Order
+                </p>
+                <table id="orderan">
+                    
+                </table>
+            </div>
+            <div class="ordBtn">
+                <button id="orderBtn">Order</button>
+            </div>
+        </article>
+
+        <footer>
+            <p>Willie Ryantama</p>
+            <p>Dicoding | LIFF</p>
+        </footer>
+    </main>
+
+    <!-- script untuk javascript -->
+    <script src="script.js"></script>
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+</body>
+</html>
